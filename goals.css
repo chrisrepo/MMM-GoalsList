@@ -1,9 +1,7 @@
-.body {
-	background-color: #efefef !important;
-}
-
 .goalContainer {
-	background-color: #cccccc;
+	height: 100%;
+	width: 100%;
+	background-color: #efefef;
 }
 
 .goalInput {
