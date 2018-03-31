@@ -13,6 +13,13 @@ Module.register("MMM-GoalsList", {
 		
 	},
 	
+	// Define start sequence.
+	start: function() {
+		Log.info("Starting module: " + this.name);
+
+		this.addresses = [];
+	},
+	
 	getDom: function() {
 		var wrapper = document.createElement("div");
 		if (this.addresses.length === 0) {
