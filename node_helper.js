@@ -9,9 +9,6 @@ const NodeHelper = require("node_helper");
 const path = require("path");
 const url = require("url");
 const fs = require("fs");
-const exec = require("child_process").exec;
-const os = require("os");
-const simpleGit = require("simple-git");
 const bodyParser = require("body-parser");
 
 var defaultModules = require(path.resolve(__dirname + "/../default/defaultmodules.js"));
@@ -31,17 +28,7 @@ module.exports = NodeHelper.create({
 
 		console.log("Starting node helper for: " + self.name);
 
-		// load fall back translation
-		self.loadTranslation("en");
-
-		this.configOnHd = {};
-		this.configData = {};
-
-		this.waiting = [];
-
 		this.template = "";
-		this.modulesAvailable = [];
-		this.modulesInstalled = [];
 
 		fs.readFile(path.resolve(__dirname + "/goals.html"), function(err, data) {
 			self.template = data.toString();
@@ -58,8 +45,7 @@ module.exports = NodeHelper.create({
 				res.send(503);
 			} else {
 				res.contentType("text/html");
-				var transformedData = self.fillTemplates(self.template);
-				res.send(transformedData);
+				res.send(self.template);
 			}
 		});
 
@@ -69,3 +55,4 @@ module.exports = NodeHelper.create({
 			self.answerGet(query, res);
 		});
 	},
+});
