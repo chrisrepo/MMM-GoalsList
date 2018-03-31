@@ -1,3 +1,14 @@
+/*General CSS*/
+html {
+  cursor: auto;
+}
+
+body {
+  margin: 10px;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+}
+/*Goals CSS*/
 .goalContainer {
 	height: 100%;
 	width: 100%;
