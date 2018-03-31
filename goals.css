@@ -1,0 +1,9 @@
+.goalInput {
+	min-width: 300px;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.goalInput:first-child {
+	margin-top: 5px;
+}
