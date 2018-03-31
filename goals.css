@@ -1,3 +1,7 @@
+.goalContainer {
+	background-color: light-grey;
+}
+
 .goalInput {
 	min-width: 300px;
 	display: block;
