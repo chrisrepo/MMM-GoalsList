@@ -1,0 +1,16 @@
+{
+	"goals_main": [
+		{
+			"text":"test goal 1"
+		},
+		{
+			"text":"test goal 2"
+		},
+		{
+			"text":"test goal 3"
+		},
+		{
+			"text":"test goal 4"
+		}
+	]
+}

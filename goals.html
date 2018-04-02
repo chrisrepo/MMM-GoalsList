@@ -2,14 +2,14 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="modules/MMM-GoalsList/goals.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="goals.js"></script>
 </head>
-<body>
+<body onLoad="loadGoalsFromFile()">
 	<div class="goalContainer">
 		<header class="header">Standard Goals</header>
-		<div class="standardGoals">
-			<input class="goalInput" id="input-1" placeholder="Goal" type="text"/>
-			<input class="goalInput" placeholder="Goal" type="text"/>
-			<input class="goalInput" placeholder="Goal" type="text"/>
+		<div id="mainGoals" class="mainGoals">
 		</div>
 	</div>
 </body>
