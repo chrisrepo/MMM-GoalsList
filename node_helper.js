@@ -68,6 +68,7 @@ module.exports = NodeHelper.create({
 		console.log("Req: " + req);
 		console.log("Res: " + res);
 		//TODO: actually write file
+		self.sendSocketNotification("POST_DATA", query.data);//temp for testing
 	},
 	
 	loadGoals: function() {
