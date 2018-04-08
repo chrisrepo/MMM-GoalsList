@@ -20,9 +20,20 @@ Module.register("MMM-GoalsList", {
 		this.addresses = [];
 	},
 	
+	getScripts: function() {
+		return [
+		        'goals.js',
+		        this.file('saveJson.php')
+		        ];
+	},
+	
 	getStyles: function() {
 		return ["goals.css"];
 	},
+	
+	getHeader: function() {
+		return 'test header';
+	}
 
 	notificationReceived: function(notification, payload, sender) {
 		if (sender) {
@@ -43,7 +54,8 @@ Module.register("MMM-GoalsList", {
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		wrapper.innerHTML = JSON.stringify(this.goals);
+		var goals = this.goals.goals_main;
+		wrapper.innerHTML = JSON.stringify(goals);
 		return wrapper;
 	}
 });
