@@ -36,7 +36,6 @@ Module.register("MMM-GoalsList", {
 	socketNotificationReceived: function(notification, payload) {
 		//update goals data
 		if (notification === "GOALS_DATA") { 
-			Log.log("GOALS_DATA payload: "+ payload);
 			this.goals = payload;
 			this.updateDom();
 		}
@@ -44,9 +43,13 @@ Module.register("MMM-GoalsList", {
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		Log.log("this.goals: " + this.goals);
-		Log.log("this.goals stringify: " + JSON.stringify(this.goals));
-		wrapper.innerHTML = JSON.stringify(this.goals);
+		var goals = this.goals.goals_main;
+		goals.forEach(function(goal){
+			var text = goal.text;
+			var textElement = document.createElement("div");
+			textElement.innerHTML = text;
+			wrapper.innerHTML = wrapper.innerHTML + textElement;
+		});
 		return wrapper;
 	}
 });
