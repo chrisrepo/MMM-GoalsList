@@ -18,6 +18,7 @@ body {
 }
 
 .removeGoal {
+	display: inline-block;
 	margin-left: 5px;
 	padding: 2px;
 	border: 1px solid red;
@@ -29,6 +30,10 @@ body {
 	padding: 2px;
 	border: 1px solid gray;
 	border-radius: 5px;
+}
+
+.inputContainer {
+	
 }
 
 .actionContainer {
@@ -43,7 +48,7 @@ body {
 
 .goalInput {
 	min-width: 300px;
-	display: block;
+	display: inline-block;
 	margin-bottom: 5px;
 }
 
