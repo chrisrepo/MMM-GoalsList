@@ -18,6 +18,7 @@ function loadGoalsFromFile() {
 			let input = "<input class='goalInput' id='" + id + "' placeholder='Enter Goal' type='text' value='" + text + "'/>";
 			let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+id+")'>-</a>";
 			$(input).appendTo("#mainGoals");
+			$(remove).appendTo("#mainGoals");
 		});
 	});
 }
@@ -47,7 +48,9 @@ function updateGoalsDiv(goals) {
 	let text = goal.text;
 	let id = "mainGoals"+i;
 	let input = "<input class='goalInput' id='" + id + "' placeholder='Enter Goal' type='text' value='" + text + "'/>";
+	let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+id+")'>-</a>";
 	$(input).appendTo("#mainGoals");
+	$(remove).appendTo("#mainGoals");
 }
 
 function saveGoals() {
