@@ -64,9 +64,9 @@ module.exports = NodeHelper.create({
 	
 	answerPost: function(query, req, res) {
 		var self = this;
-		Log.log("Query data: " + query.data);
-		Log.log("Req: " + req);
-		Log.log("Res: " + res);
+		console.log("Query data: " + query.data);
+		console.log("Req: " + req);
+		console.log("Res: " + res);
 		//TODO: actually write file
 	},
 	
