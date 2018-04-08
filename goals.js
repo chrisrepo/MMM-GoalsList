@@ -22,12 +22,12 @@ function loadGoalsFromFile() {
 			input.value = text;
 			
 			let remove = document.createElement("a");
-			a.id = goalId+"remove";
-			a.className = "removeGoal";
-			a.onClick= function () {
+			remove.id = goalId+"remove";
+			remove.className = "removeGoal";
+			remove.onclick= function () {
 				removeGoal(goalId);
 			};
-			a.value = "-";
+			remove.innerHTML = "-";
 
 			let inputContainer = document.createElement("div");
 			inputContainer.className = "inputContainer";
@@ -72,10 +72,10 @@ function updateGoalsDiv(goals) {
 	let remove = document.createElement("a");
 	remove.id = goalId+"remove";
 	remove.className = "removeGoal";
-	remove.onClick= function () {
+	remove.onclick= function () {
 		removeGoal(goalId);
 	};
-	remove.value = "-";
+	remove.innerHTML = "-";
 
 	let inputContainer = document.createElement("div");
 	inputContainer.className = "inputContainer";
