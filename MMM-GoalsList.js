@@ -45,13 +45,16 @@ Module.register("MMM-GoalsList", {
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
+		var list = document.createElement("ul");
 		var goals = this.goals.goals_main;
 		goals.forEach(function(goal){
 			var text = goal.text;
-			var textElement = document.createElement("div");
-			textElement.innerHTML = text;
-			wrapper.innerHTML = wrapper.innerHTML + textElement;
+			var listElement = document.createElement("li");
+			var textElement = document.createTextNode(text);
+			listElement.appendChild(textElement);
+			list.appendChild(listElement);
 		});
+		wrapper.appendChild(list);
 		return wrapper;
 	}
 });
