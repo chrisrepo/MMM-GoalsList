@@ -13,13 +13,26 @@ function loadGoalsFromFile() {
 	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
 		$.each(data.goals_main, function(i, goal) {
 			let text = goal.text;
-			let id = "mainGoals"+i;
-			//<input class="goalInput" id="input-1" placeholder="Enter Goal" type="text"/>
-			let input = "<input class='goalInput' id='" + id + "' placeholder='Enter Goal' type='text' value='" + text + "'/>";
-			let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+id+")'>-</a>";
+			let goalId = "mainGoals"+i;
+
+			let input = document.createElement("input");
+			input.className = "goalInput";
+			input.id = goalId;
+			input.type = "text";
+			input.value = text;
+			
+			let remove = document.createElement("a");
+			a.id = goalId+"remove";
+			a.className = "removeGoal";
+			a.onClick= function () {
+				removeGoal(goalId);
+			};
+			a.value = "-";
+
 			let inputContainer = document.createElement("div");
 			inputContainer.className = "inputContainer";
-			inputContainer.innerHTML = input + remove;
+			inputContainer.appendChild(input);
+			inputContainer.appendChild(remove);
 			$(inputContainer).appendTo("#mainGoals");
 		});
 	});
@@ -48,12 +61,26 @@ function updateGoalsDiv(goals) {
 	let i = goals.length - 1;
 	let goal = goals[i];
 	let text = goal.text;
-	let id = "mainGoals"+i;
-	let input = "<input class='goalInput' id='" + id + "' placeholder='Enter Goal' type='text' value='" + text + "'/>";
-	let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+'"' + id + '"' + ")'>-</a>";
+	let goalId = "mainGoals"+i;
+
+	let input = document.createElement("input");
+	input.className = "goalInput";
+	input.id = goalId;
+	input.type = "text";
+	input.value = text;
+	
+	let remove = document.createElement("a");
+	a.id = goalId+"remove";
+	a.className = "removeGoal";
+	a.onClick= function () {
+		removeGoal(goalId);
+	};
+	a.value = "-";
+
 	let inputContainer = document.createElement("div");
 	inputContainer.className = "inputContainer";
-	inputContainer.innerHTML = input + remove;
+	inputContainer.appendChild(input);
+	inputContainer.appendChild(remove);
 	$(inputContainer).appendTo("#mainGoals");
 }
 
