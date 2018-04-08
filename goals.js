@@ -19,8 +19,7 @@ function loadGoalsFromFile() {
 			let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+id+")'>-</a>";
 			let inputContainer = document.createElement("div");
 			inputContainer.className = "inputContainer";
-			inputContainer.appendChild(input);
-			inputContainer.appendChild(remove);
+			inputContainer.innerHTML = input + remove;
 			$(inputContainer).appendTo("#mainGoals");
 		});
 	});
@@ -54,8 +53,7 @@ function updateGoalsDiv(goals) {
 	let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+id+")'>-</a>";
 	let inputContainer = document.createElement("div");
 	inputContainer.className = "inputContainer";
-	inputContainer.appendChild(input);
-	inputContainer.appendChild(remove);
+	inputContainer.innerHTML = input + remove;
 	$(inputContainer).appendTo("#mainGoals");
 }
 
