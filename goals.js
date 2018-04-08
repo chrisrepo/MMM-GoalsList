@@ -40,8 +40,8 @@ function addNewGoal() {
 }
 
 function removeGoal(id) {
-	document.removeElementById(id);
-	document.removeElementById(id+"remove");
+	document.getElementById(id).remove();
+	document.getElementById(id + "remove").remove();
 }
 
 function updateGoalsDiv(goals) {
@@ -77,4 +77,15 @@ function post(route, params, data, callback, timeout) {
     req.open("POST", url, true);
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     req.send(JSON.stringify(data));
+}
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
 }
