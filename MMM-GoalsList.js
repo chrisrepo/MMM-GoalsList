@@ -20,13 +20,6 @@ Module.register("MMM-GoalsList", {
 		this.addresses = [];
 	},
 	
-	getScripts: function() {
-		return [
-		        'goals.js',
-		        this.file('saveJson.php')
-		        ];
-	},
-	
 	getStyles: function() {
 		return ["goals.css"];
 	},
