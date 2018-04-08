@@ -10,7 +10,7 @@ $(document).ready(function() {
 }); 
  
 function loadGoalsFromFile() {
-	$.getJSON('goals.json', function(data) {
+	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
 		$.each(data.goals_main, function(i, goal) {
 			let text = goal.text;
 			let id = "mainGoals"+i;
