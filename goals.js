@@ -70,12 +70,12 @@ function updateGoalsDiv(goals) {
 	input.value = text;
 	
 	let remove = document.createElement("a");
-	a.id = goalId+"remove";
-	a.className = "removeGoal";
-	a.onClick= function () {
+	remove.id = goalId+"remove";
+	remove.className = "removeGoal";
+	remove.onClick= function () {
 		removeGoal(goalId);
 	};
-	a.value = "-";
+	remove.value = "-";
 
 	let inputContainer = document.createElement("div");
 	inputContainer.className = "inputContainer";
