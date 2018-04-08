@@ -61,7 +61,7 @@ function saveGoals() {
 	});
 	let data = {"goals_main":goals};
 	let strGoals = JSON.stringify(data);
-	post("post", "data=goals", data, function(result){
+	post("goals_post", "data=goals", data, function(result){
 		Log.log("Result status: "+ result.status);
 	});
 	/*

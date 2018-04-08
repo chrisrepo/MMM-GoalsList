@@ -49,13 +49,13 @@ module.exports = NodeHelper.create({
 			}
 		});
 
-		this.expressApp.get("/get", function(req, res) {
+		this.expressApp.get("/goals_get", function(req, res) {
 			var query = url.parse(req.url, true).query;
 
 			self.answerGet(query, res);
 		});
 		
-		this.expressApp.post("/post", function(req, res) {
+		this.expressApp.post("/goals_post", function(req, res) {
 			var query = url.parse(req.url, true).query;
 
 			self.answerPost(query, req, res);
