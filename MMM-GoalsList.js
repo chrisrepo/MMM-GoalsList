@@ -37,7 +37,7 @@ Module.register("MMM-GoalsList", {
 		//update goals data
 		if (notification === "GOALS_DATA") { 
 			this.goals = payload;
-			self.updateDom();
+			this.updateDom();
 		}
 	},
 	
