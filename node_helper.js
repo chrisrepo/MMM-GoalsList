@@ -54,7 +54,22 @@ module.exports = NodeHelper.create({
 
 			self.answerGet(query, res);
 		});
+		
+		this.expressApp.post("/post", function(req, res) {
+			var query = url.parse(req.url, true).query;
+
+			self.answerPost(query, req, res);
+		});
 	},
+	
+	answerPost: function(query, req, res) {
+		var self = this;
+		Log.log("Query data: " + query.data);
+		Log.log("Req: " + req);
+		Log.log("Res: " + res);
+		//TODO: actually write file
+	},
+	
 	loadGoals: function() {
 		var self = this;
 

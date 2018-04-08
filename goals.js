@@ -61,6 +61,10 @@ function saveGoals() {
 	});
 	let data = {"goals_main":goals};
 	let strGoals = JSON.stringify(data);
+	post("post", "data=goals", data, function(result){
+		Log.log("Result status: "+ result.status);
+	});
+	/*
 	$.ajax({
 		type: "POST",
 		url: 'modules/MMM-GoalsList/saveJson.php',
@@ -70,5 +74,13 @@ function saveGoals() {
 			console.log(msg)
 		},
 		failure: function() {alert("Error!");}
-	});
+	});*/
 }
+
+function post(route, params, data, callback, timeout) {
+    var req = new XMLHttpRequest();
+    var url = route + "?" + params;
+    req.open("POST", url, true);
+    req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    req.send(JSON.stringify(data));
+},
