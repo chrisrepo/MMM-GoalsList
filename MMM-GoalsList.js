@@ -23,10 +23,6 @@ Module.register("MMM-GoalsList", {
 	getStyles: function() {
 		return ["goals.css"];
 	},
-	
-	getHeader: function() {
-		return 'test header';
-	},
 
 	notificationReceived: function(notification, payload, sender) {
 		if (sender) {
@@ -40,6 +36,7 @@ Module.register("MMM-GoalsList", {
 	socketNotificationReceived: function(notification, payload) {
 		//update goals data
 		if (notification === "GOALS_DATA") { 
+			Log.log("GOALS_DATA payload: "+ payload);
 			this.goals = payload;
 			this.updateDom();
 		}
@@ -47,15 +44,9 @@ Module.register("MMM-GoalsList", {
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		var goals = "";
-		if (this.goals['goals_main'] !== undefined) {
-			goals = "1.." + this.goals['goals_main'];
-		} else if  (this.goals.goals_main !== undefined) {
-			goals = "2.." + this.goals.goals_main;
-		} else if (this.goals[0] !== undefiend) {
-			goals = "3.." + this.goals[0];
-		}
-		wrapper.innerHTML = goals + " x " + JSON.stringify(this.goals);
+		Log.log("this.goals: " + this.goals);
+		Log.log("this.goals stringify: " + JSON.stringify(this.goals));
+		wrapper.innerHTML = JSON.stringify(this.goals);
 		return wrapper;
 	}
 });
