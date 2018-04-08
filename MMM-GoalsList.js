@@ -43,7 +43,7 @@ Module.register("MMM-GoalsList", {
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		wrapper.innerHTML = JSON.parse(this.goals.toString());
+		wrapper.innerHTML = JSON.stringify(this.goals);
 		return wrapper;
 	}
 });
