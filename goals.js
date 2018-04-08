@@ -22,7 +22,7 @@ function loadGoalsFromFile() {
 }
 
 function addNewGoal() {
-	$.getJSON('goals.json', function(data) {
+	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
 		let goals = data.goals_main;
 		let newGoal = {text: ""};
 		goals.push(newGoal);
@@ -30,7 +30,7 @@ function addNewGoal() {
 		updateGoalsDiv(goals);
 		$.ajax({
 			type: "POST",
-			url: 'saveJson.php',
+			url: 'modules/MMM-GoalsList/saveJson.php',
 			data: {'goals' : strGoals},
 			success: function (msg) 
 			{ 
@@ -63,7 +63,7 @@ function saveGoals() {
 	let strGoals = JSON.stringify(data);
 	$.ajax({
 		type: "POST",
-		url: 'saveJson.php',
+		url: 'modules/MMM-GoalsList/saveJson.php',
 		data: {'goals' : strGoals},
 		success: function (msg) 
 		{ 
