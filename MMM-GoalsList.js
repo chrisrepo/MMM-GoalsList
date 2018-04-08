@@ -26,7 +26,7 @@ Module.register("MMM-GoalsList", {
 	
 	getHeader: function() {
 		return 'test header';
-	}
+	},
 
 	notificationReceived: function(notification, payload, sender) {
 		if (sender) {
