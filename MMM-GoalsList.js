@@ -16,17 +16,34 @@ Module.register("MMM-GoalsList", {
 	// Define start sequence.
 	start: function() {
 		Log.info("Starting module: " + this.name);
-
+		this.goals = "test";
 		this.addresses = [];
+	},
+	
+	getStyles: function() {
+		return ["goals.css"];
+	},
+
+	notificationReceived: function(notification, payload, sender) {
+		if (sender) {
+		} else { 
+			if (notification === "DOM_OBJECTS_CREATED") {
+				this.sendSocketNotification("REQUEST_GOALS_DATA");
+			}
+		}
+	},
+	
+	socketNotificationReceived: function(notification, payload) {
+		//update goals data
+		if (notification === "GOALS_DATA") { 
+			this.goals = payload;
+			self.updateDom();
+		}
 	},
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		if (this.addresses.length === 0) {
-			this.addresses = ["ip-of-your-mirror"];
-		}
-		wrapper.innerHTML = "http://" + this.addresses[0] + ":8080/goals.html";
-		wrapper.className = "normal xsmall";
+		wrapper.innerHTML = this.goals;
 		return wrapper;
 	}
 });

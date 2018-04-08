@@ -55,4 +55,27 @@ module.exports = NodeHelper.create({
 			self.answerGet(query, res);
 		});
 	},
+	loadGoals: function() {
+		var self = this;
+
+		fs.readFile(path.resolve(__dirname + "/goals.json"), function(err, data) {
+			if (err) {
+				if (self.in("no such file or directory", err.message)) {
+					return;
+				}
+				console.log(err);
+			} else {
+				var goalData = JSON.parse(data.toString());
+				self.sendSocketNotification("GOALS_DATA", goalData);
+			}
+		});
+	},
+	socketNotificationReceived: function(notification, payload) {
+		var self = this;
+		if (notification === "REQUEST_GOALS_DATA")
+		{
+			//get goals from file
+			self.loadGoals();
+		}
+	}
 });
