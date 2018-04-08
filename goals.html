@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="modules/MMM-GoalsList/goals.css">
+	<link rel="stylesheet" type="text/css" href="goals.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="goals.js"></script>
 </head>
 <body onLoad="loadGoalsFromFile()">
 	<div class="goalContainer">
-		<header class="header">Standard Goals</header>
+		<header class="header">Standard Goals
+			<span class="actionContainer">
+				<a class="saveGoals" onClick="saveGoals()">Save</a>
+				<a class="addGoal" onClick="addNewGoal()">+</a>
+			</span>
+		</header>
 		<div id="mainGoals" class="mainGoals">
 		</div>
 	</div>

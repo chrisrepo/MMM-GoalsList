@@ -9,6 +9,25 @@ body {
   width: calc(100% - 20px);
 }
 /*Goals CSS*/
+
+.addGoal {
+	margin-left: 5px;
+	padding: 2px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.saveGoals {
+	margin-left: 5px;
+	padding: 2px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.actionContainer {
+	margin-left: 5%;
+}
+
 .goalContainer {
 	height: 100%;
 	width: 100%;
