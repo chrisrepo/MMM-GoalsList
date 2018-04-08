@@ -16,7 +16,9 @@ Module.register("MMM-GoalsList", {
 	// Define start sequence.
 	start: function() {
 		Log.info("Starting module: " + this.name);
-		this.goals = "test";
+		this.goals = {"goals_main": [
+		                             {"text":"test1"},
+		                             {"text":"test2"}]};
 		this.addresses = [];
 	},
 	
