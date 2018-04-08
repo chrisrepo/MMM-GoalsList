@@ -47,8 +47,15 @@ Module.register("MMM-GoalsList", {
 	
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		var goals = this.goals.goals_main;
-		wrapper.innerHTML = JSON.stringify(goals);
+		var goals = "";
+		if (this.goals['goals_main'] !== undefined) {
+			goals = "1.." + this.goals['goals_main'];
+		} else if  (this.goals.goals_main !== undefined) {
+			goals = "2.." + this.goals.goals_main;
+		} else if (this.goals[0] !== undefiend) {
+			goals = "3.." + this.goals[0];
+		}
+		wrapper.innerHTML = goals + " x " + JSON.stringify(this.goals);
 		return wrapper;
 	}
 });
