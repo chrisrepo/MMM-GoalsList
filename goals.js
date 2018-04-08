@@ -16,6 +16,7 @@ function loadGoalsFromFile() {
 			let id = "mainGoals"+i;
 			//<input class="goalInput" id="input-1" placeholder="Enter Goal" type="text"/>
 			let input = "<input class='goalInput' id='" + id + "' placeholder='Enter Goal' type='text' value='" + text + "'/>";
+			let remove = "<a id='"+id+"remove' class='removeGoal' onClick='removeGoal("+id+")'>-</a>";
 			$(input).appendTo("#mainGoals");
 		});
 	});
@@ -33,6 +34,11 @@ function addNewGoal() {
 		});
 		
 	});
+}
+
+function removeGoal(id) {
+	document.removeElementById(id);
+	document.removeElementById(id+"remove");
 }
 
 function updateGoalsDiv(goals) {

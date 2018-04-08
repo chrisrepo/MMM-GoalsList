@@ -17,6 +17,13 @@ body {
 	border-radius: 5px;
 }
 
+.removeGoal {
+	margin-left: 5px;
+	padding: 2px;
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
 .saveGoals {
 	margin-left: 5px;
 	padding: 2px;
@@ -42,4 +49,19 @@ body {
 
 .goalInput:first-child {
 	margin-top: 5px;
+}
+
+/*MM Goals CSS*/
+
+.mmListItem {
+	text-align: left;
+	font-size: 0.9em
+}
+
+.mmListHeader {
+	fond-weight: 600;
+}
+
+.mmListWrapper {
+	
 }

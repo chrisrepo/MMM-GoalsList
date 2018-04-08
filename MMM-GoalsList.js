@@ -52,6 +52,7 @@ Module.register("MMM-GoalsList", {
 			var listElement = document.createElement("li");
 			var textElement = document.createTextNode(text);
 			listElement.appendChild(textElement);
+			listElement.className = "mmListItem";
 			list.appendChild(listElement);
 		});
 		wrapper.appendChild(list);
