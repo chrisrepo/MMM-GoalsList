@@ -28,15 +28,8 @@ function addNewGoal() {
 		goals.push(newGoal);
 		let strGoals = JSON.stringify(data);
 		updateGoalsDiv(goals);
-		$.ajax({
-			type: "POST",
-			url: 'modules/MMM-GoalsList/saveJson.php',
-			data: {'goals' : strGoals},
-			success: function (msg) 
-			{ 
-				console.log(msg)
-			},
-	        failure: function() {alert("Error!");}
+		post("goals_post", "data=goals", data, function(result){
+			Log.log("Save goal file result: "+ result.status);
 		});
 		
 	});
@@ -60,21 +53,9 @@ function saveGoals() {
 		goals.push(goal);
 	});
 	let data = {"goals_main":goals};
-	let strGoals = JSON.stringify(data);
 	post("goals_post", "data=goals", data, function(result){
-		Log.log("Result status: "+ result.status);
+		Log.log("Save goal file result: "+ result.status);
 	});
-	/*
-	$.ajax({
-		type: "POST",
-		url: 'modules/MMM-GoalsList/saveJson.php',
-		data: {'goals' : strGoals},
-		success: function (msg) 
-		{ 
-			console.log(msg)
-		},
-		failure: function() {alert("Error!");}
-	});*/
 }
 
 function post(route, params, data, callback, timeout) {

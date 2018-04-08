@@ -64,11 +64,11 @@ module.exports = NodeHelper.create({
 	
 	answerPost: function(query, req, res) {
 		var self = this;
-		console.log("Query data: " + query.data);
-		console.log("Req: " + req);
-		console.log("Res: " + res);
-		//TODO: actually write file
-		self.sendSocketNotification("POST_DATA", query.data);//temp for testing
+		if (query.data === "goals") {
+			console.log("Saving goals to file");
+			fs.writeFile(path.resolve(__dirname + "/goals.json"), JSON.stringify(req.body));
+			res.send(JSON.stringify({"status": "success"}));
+		}
 	},
 	
 	loadGoals: function() {

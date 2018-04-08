@@ -27,9 +27,6 @@ Module.register("MMM-GoalsList", {
 	},
 
 	notificationReceived: function(notification, payload, sender) {
-		if(notification === "POST_DATA") {
-			Log.log("Payload: " + payload);
-		}
 		if (sender) {
 		} else { 
 			if (notification === "DOM_OBJECTS_CREATED") {
