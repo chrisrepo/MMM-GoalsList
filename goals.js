@@ -64,8 +64,8 @@ function removeGoal(id) {
 }
 
 function removeGoalFromHtml(id) {
-	document.removeElementById(id);
-	document.removeElementById(id+"remove")
+	document.getElementById(id).remove();
+	document.getElementById(id + "remove").remove();
 }
 
 function updateGoalsDiv(goals) {
