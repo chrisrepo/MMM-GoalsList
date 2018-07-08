@@ -56,18 +56,23 @@ function removeGoal(id) {
 		let goals = data.goals_main;
 		goals.splice(id, 1);
 		let strGoals = JSON.stringify(data);
-		updateGoalsDiv(goals);
+		removeGoalFromHtml(id);
 		post("goals_post", "data=goals", data, function(result){
 			Log.log("Save goal file result: "+ result.status);
 		});
 	});
 }
 
+function removeGoalFromHtml(id) {
+	document.removeElementById(id);
+	document.removeElementById(id+"remove")
+}
+
 function updateGoalsDiv(goals) {
 	let i = goals.length - 1;
 	let goal = goals[i];
 	let text = goal.text;
-	let goalId = "mainGoals"+i;
+	let goalId = i;
 
 	let input = document.createElement("input");
 	input.className = "goalInput";
