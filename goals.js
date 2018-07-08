@@ -54,7 +54,7 @@ function addNewGoal() {
 function removeGoal(id) {
 	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
 		let goals = data.goals_main;
-		goals.remove(id);
+		goals.splice(id, 1);
 		let strGoals = JSON.stringify(data);
 		updateGoalsDiv(goals);
 		post("goals_post", "data=goals", data, function(result){
