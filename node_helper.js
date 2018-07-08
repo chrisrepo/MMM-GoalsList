@@ -88,6 +88,7 @@ module.exports = NodeHelper.create({
 	},
 	socketNotificationReceived: function(notification, payload) {
 		var self = this;
+		console.log("Notification Received: [name] - "+notification);
 		if (notification === "REQUEST_GOALS_DATA")
 		{
 			//get goals from file
