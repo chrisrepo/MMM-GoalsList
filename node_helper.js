@@ -82,13 +82,14 @@ module.exports = NodeHelper.create({
 				console.log(err);
 			} else {
 				var goalData = JSON.parse(data.toString());
+				console.log("Sending loadGoals notification...");
 				self.sendSocketNotification("GOALS_DATA", goalData);
 			}
 		});
 	},
 	socketNotificationReceived: function(notification, payload) {
 		var self = this;
-		console.log("Notification Received: [name] - "+notification);
+		console.log("Notification Received - '" + notification + "'");
 		if (notification === "REQUEST_GOALS_DATA")
 		{
 			//get goals from file

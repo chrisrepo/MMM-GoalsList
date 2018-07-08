@@ -38,12 +38,15 @@ Module.register("MMM-GoalsList", {
 	socketNotificationReceived: function(notification, payload) {
 		//update goals data
 		if (notification === "GOALS_DATA") { 
+			console.log("Notification recieved - 'GOALS_DATA'...");
+			console.log("Updating DOM");
 			this.goals = payload;
 			this.updateDom();
 		}
 	},
 	
 	getDom: function() {
+		console.log("Getting DOM...");
 		var wrapper = document.createElement("div");
 		var list = document.createElement("ul");
 		var goals = this.goals.goals_main;
