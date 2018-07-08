@@ -71,7 +71,7 @@ module.exports = NodeHelper.create({
 
 			console.log("Save successful.");
 			console.log("Reloading goals...");
-			self.sendSocketNotification("REQUEST_GOALS_DATA");
+			self.sendSocketNotification("GOALS_DATA", req.body);
 		}
 	},
 	
