@@ -68,6 +68,10 @@ module.exports = NodeHelper.create({
 			console.log("Saving goals to file");
 			fs.writeFile(path.resolve(__dirname + "/goals.json"), JSON.stringify(req.body));
 			res.send(JSON.stringify({"status": "success"}));
+
+			console.log("Save successful.");
+			console.log("Reloading goals...");
+			self.sendSocketNotification("REQUEST_GOALS_DATA");
 		}
 	},
 	
