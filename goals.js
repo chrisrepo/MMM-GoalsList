@@ -13,7 +13,7 @@ function loadGoalsFromFile() {
 	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
 		$.each(data.goals_main, function(i, goal) {
 			let text = goal.text;
-			let goalId = "mainGoals"+i;
+			let goalId = i;
 
 			let input = document.createElement("input");
 			input.className = "goalInput";
@@ -41,20 +41,26 @@ function loadGoalsFromFile() {
 function addNewGoal() {
 	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
 		let goals = data.goals_main;
-		let newGoal = {text: ""};
+		let newGoal = {text: "New*"};
 		goals.push(newGoal);
+		//let strGoals = JSON.stringify(data);
+		updateGoalsDiv(goals);
+		post("goals_post", "data=goals", data, function(result){
+			Log.log("Save goal file result: "+ result.status);
+		});
+	});
+}
+
+function removeGoal(id) {
+	$.getJSON('modules/MMM-GoalsList/goals.json', function(data) {
+		let goals = data.goals_main;
+		goals.remove(id);
 		let strGoals = JSON.stringify(data);
 		updateGoalsDiv(goals);
 		post("goals_post", "data=goals", data, function(result){
 			Log.log("Save goal file result: "+ result.status);
 		});
-		
 	});
-}
-
-function removeGoal(id) {
-	document.getElementById(id).remove();
-	document.getElementById(id + "remove").remove();
 }
 
 function updateGoalsDiv(goals) {
