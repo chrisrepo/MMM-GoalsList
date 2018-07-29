@@ -48,6 +48,10 @@ Module.register("MMM-GoalsList", {
 	getDom: function() {
 		console.log("Getting DOM...");
 		var wrapper = document.createElement("div");
+		wrapper.className = "mmListWrapper";
+		var heading = document.createElement("h3");
+		var headingText = document.createTextNode("Goals");
+		heading.appendChild(headingText);
 		var list = document.createElement("ul");
 		var goals = this.goals.goals_main;
 		goals.forEach(function(goal){
@@ -58,6 +62,7 @@ Module.register("MMM-GoalsList", {
 			listElement.className = "mmListItem";
 			list.appendChild(listElement);
 		});
+		wrapper.appendChild(heading);
 		wrapper.appendChild(list);
 		return wrapper;
 	}
