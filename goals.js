@@ -21,13 +21,13 @@ function loadGoalsFromFile() {
 			input.type = "text";
 			input.value = text;
 			
-			let remove = document.createElement("a");
+			let remove = document.createElement("button");
 			remove.id = goalId+"remove";
 			remove.className = "removeGoal";
 			remove.onclick= function () {
 				removeGoal(goalId);
 			};
-			remove.innerHTML = "-";
+			remove.innerHTML = "X";
 
 			let inputContainer = document.createElement("div");
 			inputContainer.className = "inputContainer";
@@ -80,13 +80,13 @@ function updateGoalsDiv(goals) {
 	input.type = "text";
 	input.value = text;
 	
-	let remove = document.createElement("a");
+	let remove = document.createElement("button");
 	remove.id = goalId+"remove";
 	remove.className = "removeGoal";
 	remove.onclick= function () {
 		removeGoal(goalId);
 	};
-	remove.innerHTML = "-";
+	remove.innerHTML = "X";
 
 	let inputContainer = document.createElement("div");
 	inputContainer.className = "inputContainer";

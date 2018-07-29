@@ -13,23 +13,18 @@ body {
 .addGoal {
 	margin-left: 5px;
 	padding: 2px;
-	border: 1px solid gray;
-	border-radius: 5px;
 }
 
 .removeGoal {
 	display: inline-block;
 	margin-left: 5px;
 	padding: 2px;
-	border: 1px solid red;
-	border-radius: 5px;
+	background-color:red;
 }
 
 .saveGoals {
 	margin-left: 5px;
 	padding: 2px;
-	border: 1px solid gray;
-	border-radius: 5px;
 }
 
 .inputContainer {
@@ -59,7 +54,7 @@ body {
 /*MM Goals CSS*/
 
 .mmListItem {
-	font-size: 1.2em
+	font-size: 1.0em
 }
 
 .mmListWrapper > ul {
