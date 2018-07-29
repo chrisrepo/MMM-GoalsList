@@ -67,8 +67,11 @@ body {
 	display: inline-block;
 }
 
-.mmListWrapper {
+.mmListHeader {
 	margin: 5px !important;
+}
+
+.mmListWrapper {
 	text-align: center;
 }
 

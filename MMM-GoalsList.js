@@ -53,6 +53,7 @@ Module.register("MMM-GoalsList", {
 		var wrapper = document.createElement("div");
 		wrapper.className = "mmListWrapper";
 		var heading = document.createElement("h2");
+		heading.className = "mmListHeader";
 		var headingText = document.createTextNode("Goals");
 		heading.appendChild(headingText);
 		var list = document.createElement("ul");
