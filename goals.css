@@ -73,4 +73,5 @@ body {
 .mmListFooter {
 	font-size: 0.7em;
 	color: gray;
+	display: block;
 }

@@ -66,7 +66,7 @@ Module.register("MMM-GoalsList", {
 			list.appendChild(listElement);
 		});
 		var listFooter = document.createElement("span");
-		listFooter.innerHTML = "Modify list at http://" + this.addresses[0]; + ":8080/goals.html";
+		listFooter.innerHTML = "Modify list at http://" + this.addresses[0] + ":8080/goals.html";
 		listFooter.className = "mmListFooter";
 		wrapper.appendChild(heading);
 		wrapper.appendChild(list);
