@@ -10,6 +10,7 @@ const path = require("path");
 const url = require("url");
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const os = require("os");
 
 var defaultModules = require(path.resolve(__dirname + "/../default/defaultmodules.js"));
 
