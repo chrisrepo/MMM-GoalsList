@@ -91,11 +91,30 @@ module.exports = NodeHelper.create({
 			}
 		});
 	},
+	
+	getIpAddresses: function() {
+		// module started, answer with current IP address
+		var interfaces = os.networkInterfaces();
+		var addresses = [];
+		for (var k in interfaces) {
+			for (var k2 in interfaces[k]) {
+				var address = interfaces[k][k2];
+				if (address.family === "IPv4" && !address.internal) {
+					addresses.push(address.address);
+				}
+			}
+		}
+		return addresses;
+	},
+	
 	socketNotificationReceived: function(notification, payload) {
 		var self = this;
 		console.log("Notification Received - '" + notification + "'");
 		if (notification === "REQUEST_GOALS_DATA")
 		{
+			//get current ip
+			self.sendSocketNotification("IP_ADDRESSES", self.getIpAddresses());
+			
 			//get goals from file
 			self.loadGoals();
 		}

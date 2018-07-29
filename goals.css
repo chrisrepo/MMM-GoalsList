@@ -59,14 +59,18 @@ body {
 /*MM Goals CSS*/
 
 .mmListItem {
-	text-align: left;
 	font-size: 0.9em
 }
 
 .mmListHeader {
-	fond-weight: 600;
+	font-weight: 600;
 }
 
 .mmListWrapper {
 	text-align: center;
+}
+
+.mmListFooter {
+	font-size: 0.7em;
+	color: gray;
 }

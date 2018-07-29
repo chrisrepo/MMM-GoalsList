@@ -43,6 +43,9 @@ Module.register("MMM-GoalsList", {
 			this.goals = payload;
 			this.updateDom();
 		}
+		if (notification === "IP_ADDRESSES") {
+			this.addresses = payload;
+		}
 	},
 	
 	getDom: function() {
@@ -62,6 +65,9 @@ Module.register("MMM-GoalsList", {
 			listElement.className = "mmListItem";
 			list.appendChild(listElement);
 		});
+		var listFooter = document.createElement("span");
+		listFooter.innerHTML = "Modify list at http://" + this.addresses[0]; + ":8080/goals.html";
+		listFooter.className = "mmListFooter";
 		wrapper.appendChild(heading);
 		wrapper.appendChild(list);
 		return wrapper;
