@@ -59,7 +59,7 @@ body {
 /*MM Goals CSS*/
 
 .mmListItem {
-	font-size: 0.9em
+	font-size: 1.2em
 }
 
 .mmListWrapper > ul {
@@ -71,7 +71,7 @@ body {
 }
 
 .mmListFooter {
-	font-size: 0.7em;
+	font-size: 0.5em;
 	color: gray;
 	display: block;
 }
