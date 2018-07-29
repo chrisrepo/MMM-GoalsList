@@ -63,12 +63,12 @@ body {
 }
 
 .mmListWrapper > ul {
-	margin: 5px;
+	margin: 5px !important;
 	display: inline-block;
 }
 
 .mmListWrapper {
-	margin: 5px;
+	margin: 5px !important;
 	text-align: center;
 }
 
