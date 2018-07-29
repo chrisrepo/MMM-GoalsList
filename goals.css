@@ -27,8 +27,8 @@ body {
 	padding: 2px;
 }
 
-.inputContainer {
-	
+.goalContainerWrapper {
+	text-align: center
 }
 
 .actionContainer {
@@ -36,9 +36,12 @@ body {
 }
 
 .goalContainer {
-	height: 100%;
-	width: 100%;
+	height: auto;
+	width: auto;
 	background-color: #efefef;
+	border: 1px solid grey;
+	border-radius: 5px;
+	display: inline-block;
 }
 
 .goalInput {

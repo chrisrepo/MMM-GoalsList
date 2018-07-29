@@ -7,14 +7,16 @@
 	<script type="text/javascript" src="modules/MMM-GoalsList/goals.js"></script>
 </head>
 <body onLoad="loadGoalsFromFile()">
-	<div class="goalContainer">
-		<header class="header">Edit Goal List
-			<span class="actionContainer">
-				<button class="saveGoals" onClick="saveGoals()">Save</button>
-				<button class="addGoal" onClick="addNewGoal()">Add Goal</button>
-			</span>
-		</header>
-		<div id="mainGoals" class="mainGoals">
+	<div class="goalContainerWrapper">
+		<div class="goalContainer">
+			<header class="header">Edit Goal List
+				<span class="actionContainer">
+					<button class="saveGoals" onClick="saveGoals()">Save</button>
+					<button class="addGoal" onClick="addNewGoal()">Add Goal</button>
+				</span>
+			</header>
+			<div id="mainGoals" class="mainGoals">
+			</div>
 		</div>
 	</div>
 </body>
