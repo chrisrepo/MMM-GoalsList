@@ -62,8 +62,8 @@ body {
 	font-size: 0.9em
 }
 
-.mmListHeader {
-	font-weight: 600;
+.mmListWrapper > ul {
+	display: inline-block;
 }
 
 .mmListWrapper {

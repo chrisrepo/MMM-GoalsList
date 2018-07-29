@@ -70,6 +70,7 @@ Module.register("MMM-GoalsList", {
 		listFooter.className = "mmListFooter";
 		wrapper.appendChild(heading);
 		wrapper.appendChild(list);
+		wrapper.appendChild(listFooter);
 		return wrapper;
 	}
 });
